@@ -6,6 +6,7 @@ const cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const bookedRouter = require('./routes/bookedDays');
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/bookedDays', bookedRouter);
 
 module.exports = app;
