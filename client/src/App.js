@@ -7,31 +7,9 @@ function App() {
   const { state } = useAppData();
 
   const userList = (state.users).map((user) => {
-    // console.log(user)
     return (user.email)
   })
 console.log(state)
-
-  // const [data, setData] = useState("");
-  // const [state, setState] = useState({
-  //   users: [],
-  //   bookedDays: [],
-  // });
-
-  // useEffect(() => {
-  //   Promise.all([
-  //     axios.get('/users'),
-  //     axios.get('bookedDays')
-  //   ])
-  //   .then((all) => {
-  //     const [users, bookedDays] = all;
-  //     setState(prev => ({
-  //       ...prev,
-  //       users: users.data,
-  //       bookedDays: bookedDays.data
-  //     }))
-  //   })
-  // }, [])
 
   return (
     <main className="App">
