@@ -11,13 +11,16 @@ function App() {
 
   useEffect(() => {
     Promise.all([
-      axios.get('/users')
+      axios.get('/users'),
+      axios.get('bookedDays')
     ])
     .then((all) => {
-      console.log(all[0].data.users)
+      // console.log(all[0].data.users)
+      const [users, bookedDays] = all;
       setState(prev => ({
         ...prev,
-        users: all[0].data.users
+        users: users.data,
+        bookedDays: bookedDays.data
       }))
     })
   }, [])
@@ -25,8 +28,8 @@ function App() {
   return (
     <div className="App">
       <h1>Hello World</h1>
-      <p>{!state.users[0] ? "Loading..." : state.users[0].email}</p>
-      {console.log(state.users)}
+      {/* <p>{!state.users.users ? "Loading..." : state.bookedDays}</p> */}
+      {/* {console.log(state.bookedDays.bookedDays)} */}
     </div>
   );
 }
