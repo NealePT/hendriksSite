@@ -1,12 +1,15 @@
-const router = require('express').Router();
+// routes/users.js
+const express = require('express');
+const router = express.Router();
+const users = require('../db/queries/users');
 
-const users = ['Bob', 'Alex', 'Will', 'Tristan'];
 
-module.exports = (db) => {
-  // all routes will go here 
-  router.get('/', (req, res) => {
-    res.json(users);
+/* GET users listing. */
+router.get('/', (req, res) => {
+  users.getAllUsers().then(data => {
+    console.log(data);
+    res.json({users: data});
   });
+});
 
-  return router;
-};
+module.exports = router;
