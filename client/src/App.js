@@ -8,16 +8,15 @@ import NavBar from './components/NavBar';
 function App() {
   const { state } = useAppData();
 
-  const userList = (state.users).map((user) => {
-    return (user.email)
-  })
-console.log(state)
+//   const userList = (state.users).map((user) => {
+//     return (user.email)
+//   })
+// console.log(state)
 
   return (
     <main className="App">
       <NavBar />
       <h1>Hello World</h1>
-      {userList}
     </main>
   );
 }
