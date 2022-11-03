@@ -1,5 +1,6 @@
 .NavBar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   background-color: #161B22; 
   color: white;
@@ -7,12 +8,17 @@
 }
 
 .navLinks {
-  width: 100%;
+  width: 50%;
   list-style: none;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 10px 10px;
+}
+
+.navTitle {
+  width: 50%;
+  margin-left: 30px;
 }
 
 a {
@@ -25,4 +31,5 @@ a {
 a:hover {
   background-color: #C8C8C8;
   color: #161B22;
+  border-radius: 20px;
 }
