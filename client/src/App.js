@@ -7,6 +7,7 @@ import useAppData from './hooks/useAppData'
 import NavBar from './components/NavBar';
 import About from './components/About';
 import Gallery from './components/Gallery';
+import Booking from './components/Booking';
 
 function App() {
   const { state } = useAppData();
