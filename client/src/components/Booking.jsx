@@ -1,4 +1,5 @@
 import React from 'react';
+import './Booking.css'
 
 export default function Booking(props) {
   return (

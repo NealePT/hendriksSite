@@ -23,6 +23,7 @@ function App() {
       <h1>Hello World</h1>
       <About />
       <Gallery />
+      <Booking />
     </main>
   );
 }
