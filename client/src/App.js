@@ -6,6 +6,7 @@ import useAppData from './hooks/useAppData'
 // Component imports
 import NavBar from './components/NavBar';
 import About from './components/About';
+import Gallery from './components/Gallery';
 
 function App() {
   const { state } = useAppData();
@@ -20,6 +21,7 @@ function App() {
       <NavBar />
       <h1>Hello World</h1>
       <About />
+      <Gallery />
     </main>
   );
 }
