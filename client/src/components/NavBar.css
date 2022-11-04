@@ -23,19 +23,19 @@
   font-family: 'Shalimar', cursive;
 }
 
-h2 {
+.NavBar h2 {
   font-size: 3em;
   margin: 0px;
 }
 
-a {
+.NavBar a {
   text-decoration: none;
   color: #C8C8C8;
   padding: 15px;
   margin: 0px 10px;
 }
 
-a:hover {
+.NavBar a:hover {
   background-color: #C8C8C8;
   color: #161B22;
   border-radius: 20px;
