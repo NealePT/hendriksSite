@@ -2,8 +2,10 @@ import './App.css';
 import axios from 'axios';
 import {React, useState, useEffect} from 'react';
 import useAppData from './hooks/useAppData'
-import NavBar from './components/NavBar';
 
+// Component imports
+import NavBar from './components/NavBar';
+import About from './components/About';
 
 function App() {
   const { state } = useAppData();
@@ -17,6 +19,7 @@ function App() {
     <main className="App">
       <NavBar />
       <h1>Hello World</h1>
+      <About />
     </main>
   );
 }
