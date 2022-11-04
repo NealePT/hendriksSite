@@ -7,7 +7,7 @@ const bookedDays = require('../db/queries/bookedDays');
 /* GET users listing. */
 router.get('/', (req, res) => {
   bookedDays.getAllBookedDays().then(data => {
-    console.log(data);
+    // console.log(data);
     res.json({bookedDays: data});
   });
 });
