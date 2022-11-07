@@ -2,7 +2,6 @@ import './App.css';
 import axios from 'axios';
 import {React, useState, useEffect} from 'react';
 import useAppData from './hooks/useAppData'
-import Button from '@mui/material/Button';
 
 // Component imports
 import NavBar from './components/NavBar';
