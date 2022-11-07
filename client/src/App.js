@@ -22,8 +22,6 @@ console.log(state)
     <main className="App">
       <NavBar />
       <h1>Hello World</h1>
-      <Button>Hello World</Button>
-
       <About />
       <Gallery />
       <Booking />
