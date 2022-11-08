@@ -20,7 +20,6 @@ console.log(state)
   return (
     <main className="App">
       <NavBar />
-      <h1>Hello World</h1>
       <About />
       <Gallery />
       <Booking />
