@@ -12,6 +12,7 @@ export default function Booking(props) {
     setEndDate(end);
   };
   console.log(startDate, endDate)
+  
   return (
     <DatePicker
       selected={startDate}
