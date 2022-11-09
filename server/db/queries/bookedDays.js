@@ -14,16 +14,5 @@ const getBookedDaysById = id => {
   });
 };
 
-const addBookedDay = (req, res) => {
-  const { day, month, year } = req.body;
-  const values = [day, month, year];
-  const command = `
-    INSERT INTO bookedDays (day, month, year)
-    VALUES ($1, $2, $3)
-    RETURNING *;
-  `;
-  return db.query(command, values)
-    .then(data => res.send(data.rows[0]));
-};
 
-module.exports = {getAllBookedDays, getBookedDaysById, addBookedDay};
+module.exports = {getAllBookedDays, getBookedDaysById};

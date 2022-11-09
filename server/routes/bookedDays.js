@@ -13,10 +13,12 @@ router.get('/', (req, res) => {
 
 // PUT /bookedDays/new
 
-router.put('/new', (req, res) => {
-  bookedDays.addBookedDay(req, res).then(data => {
-    res.json({bookedDays: data});
-  });
+router.put('/', (req, res) => {
+  // bookedDays.addBookedDay(req, res).then(data => {
+  //   res.json({bookedDays: data});
+  // });
+  console.log('req.body = ', req.body);
+  console.log(res);
 });
 
 

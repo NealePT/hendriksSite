@@ -23,12 +23,14 @@ export default function Booking(props) {
 
   const saveDay = () => {
     const day = {
+      id: 10,
       day: 11,
       month: 11,
       year: 2022,
     }
-    axios.put('/bookedDays/new', day)
+    axios.put('/bookedDays/', day)
       .then(res => console.log('res =', res.data))
+      .catch(err => (console.log(err)))
   }
 
   return (
@@ -41,7 +43,7 @@ export default function Booking(props) {
         selectsRange
         inline
       />
-      <button onClick={saveDay}></button>
+      <button onClick={saveDay}>Save Day</button>
     </div>
   );
 };
