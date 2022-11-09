@@ -14,13 +14,15 @@ export default function Booking(props) {
   console.log(startDate, endDate)
   
   return (
-    <DatePicker
-      selected={startDate}
-      onChange={onChange}
-      startDate={startDate}
-      endDate={endDate}
-      selectsRange
-      inline
-    />
+    <div className="booking">
+      <DatePicker
+        selected={startDate}
+        onChange={onChange}
+        startDate={startDate}
+        endDate={endDate}
+        selectsRange
+        inline
+      />
+    </div>
   );
 };
