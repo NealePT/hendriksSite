@@ -13,11 +13,13 @@ export default function Booking(props) {
   };
 
   const parseDate = (start, end) => {
-    console.log(start.toUTCString().split(" "))
-    console.log(end.toUTCString().split(" "))
+    if (startDate !== null && endDate !== null) {
+      console.log(start.toUTCString().split(" "))
+      console.log(end.toUTCString().split(" "))
+    }
   };
   console.log(parseDate(startDate, endDate))
-  
+
   return (
     <div className="booking">
       <DatePicker
