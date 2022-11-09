@@ -1,4 +1,4 @@
-// routes/users.js
+// routes/bookedDays.js
 const express = require('express');
 const router = express.Router();
 const bookedDays = require('../db/queries/bookedDays');
