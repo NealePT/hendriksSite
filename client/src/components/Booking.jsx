@@ -2,6 +2,7 @@ import {useState} from 'react';
 import './Booking.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import axios from 'axios';
 
 export default function Booking(props) {
   const [startDate, setStartDate] = useState(new Date());
@@ -18,7 +19,17 @@ export default function Booking(props) {
       console.log(end.toUTCString().split(" "))
     }
   };
-  console.log(parseDate(startDate, endDate))
+  // console.log(parseDate(startDate, endDate))
+
+  const saveDay = () => {
+    const day = {
+      day: 11,
+      month: 11,
+      year: 2022,
+    }
+    axios.put('/bookedDays/new', day)
+      .then(res => console.log('res =', res.data))
+  }
 
   return (
     <div className="booking">
@@ -30,6 +41,7 @@ export default function Booking(props) {
         selectsRange
         inline
       />
+      <button onClick={saveDay}></button>
     </div>
   );
 };
