@@ -29,7 +29,8 @@ export default function Booking(props) {
       year: 2022,
     }
     axios.put('/bookedDays/', day)
-      .then(res => console.log('res =', res.data))
+    // .then(console.log(day))
+      .then(res => res.data)
       .catch(err => (console.log(err)))
   }
 

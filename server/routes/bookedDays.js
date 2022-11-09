@@ -18,7 +18,7 @@ router.put('/', (req, res) => {
   //   res.json({bookedDays: data});
   // });
   console.log('req.body = ', req.body);
-  console.log(res);
+  console.log("res");
 });
 
 
