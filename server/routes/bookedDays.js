@@ -13,19 +13,11 @@ router.get('/', (req, res) => {
 
 // PUT /bookedDays/new
 
-module.exports = (db) => {
-  router.put('/new', (req, res) => {
-  // console.log('req.body =', req.body);
-    const { day, month, year } = req.body;
-    const values = [day, month, year];
-    const command = `
-      INSERT INTO bookedDays (day, month, year)
-      VALUES ($1, $2, $3)
-      RETURNING *;
-    `;
-    return db.query(command, values)
-      .then(data => res.send(data.rows[0]));
+router.put('/new', (req, res) => {
+  bookedDays.addBookedDay(req, res).then(data => {
+    res.json({bookedDays: data});
   });
-};
+});
+
 
 module.exports = router;
