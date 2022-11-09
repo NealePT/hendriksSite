@@ -23,12 +23,11 @@ export default function Booking(props) {
 
   const saveDay = () => {
     const day = {
-      id: 10,
       day: 11,
       month: 11,
       year: 2022,
     }
-    axios.put('/bookedDays/', day)
+    axios.put('http://localhost:8080/bookedDays/', day)
     // .then(console.log(day))
       .then(res => res.data)
       .catch(err => (console.log(err)))
