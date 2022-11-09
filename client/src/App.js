@@ -15,7 +15,7 @@ function App() {
 //   const userList = (state.users).map((user) => {
 //     return (user.email)
 //   })
-// console.log(state)
+// console.log(state.bookedDays)
 
   return (
     <main className="App">

@@ -11,7 +11,12 @@ export default function Booking(props) {
     setStartDate(start);
     setEndDate(end);
   };
-  console.log(startDate, endDate)
+
+  const parseDate = (start, end) => {
+    console.log(start.toUTCString().split(" "))
+    console.log(end.toUTCString().split(" "))
+  };
+  console.log(parseDate(startDate, endDate))
   
   return (
     <div className="booking">
