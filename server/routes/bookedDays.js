@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const bookedDays = require('../db/queries/bookedDays');
+const db = require('../configs/db.config');
 
 // GET Booked Days listing. 
 router.get('/', (req, res) => {
@@ -14,12 +15,30 @@ router.get('/', (req, res) => {
 // PUT /bookedDays/new
 
 router.put('/', (req, res) => {
-  // bookedDays.addBookedDay(req, res).then(data => {
-  //   res.json({bookedDays: data});
-  // });
-  console.log('req.body = ', req.body);
-  console.log("res");
+  const { day, month, year } = req.body;
+  const values = [day, month, year];
+  const command = `
+      INSERT INTO bookeddays (day, month, year)
+      VALUES ($1, $2, $3)
+      RETURNING *;
+    `;
+  return db.query(command, values)
+    .then(data => res.send(data.rows[0]));
 });
 
+// PUT /projects/new
+// module.exports = (db) => {
+//   router.put('/', (req, res) => {
+//     const { day, month, year } = req.body;
+//     const values = [day, month, year];
+//     const command = `
+//       INSERT INTO projects (day, month, year)
+//       VALUES ($1, $2, $3)
+//       RETURNING *;
+//     `;
+//     return db.query(command, values)
+//       .then(data => res.send(data.rows[0]));
+//   });
+// };
 
 module.exports = router;
