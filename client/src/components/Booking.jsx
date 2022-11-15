@@ -13,13 +13,21 @@ export default function Booking(props) {
     setEndDate(end);
   };
 
-  const parseDate = (start, end) => {
-    if (startDate !== null && endDate !== null) {
-      console.log(start.toUTCString().split(" "))
-      console.log(end.toUTCString().split(" "))
+  const parseStartDate = (start) => {
+    if (startDate !== null) {
+      return (start.toUTCString().split(" "))
+      // console.log(end.toUTCString().split(" "))
     }
   };
-  // console.log(parseDate(startDate, endDate))
+
+  const parseEndDate = (end) => {
+    if (endDate !== null) {
+      // console.log(start.toUTCString().split(" "))
+      return (end.toUTCString().split(" "))
+    }
+  };
+  console.log(parseStartDate(startDate))
+  console.log(parseEndDate(endDate))
 
   const saveDay = () => {
     const day = {
