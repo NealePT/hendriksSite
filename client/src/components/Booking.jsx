@@ -24,16 +24,16 @@ export default function Booking(props) {
       return (end.toUTCString().split(" "))
     }
   };
-  // console.log(parseStartDate(startDate))
-  // console.log(parseEndDate(endDate))
+  console.log(parseStartDate(startDate))
+  console.log(parseEndDate(endDate))
 
   const saveDay = () => {
     let start = parseStartDate(startDate);
     let end = parseEndDate(endDate);
     const day = {
-      day: Number(start[1]),
-      month: start[2],
-      year: Number(start[3]),
+      day: Number(end[1]),
+      month: end[2],
+      year: Number(end[3]),
     }
     axios.put('http://localhost:8080/bookedDays/', day)
     .then(console.log(day))
