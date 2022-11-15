@@ -16,13 +16,11 @@ export default function Booking(props) {
   const parseStartDate = (start) => {
     if (startDate !== null) {
       return (start.toUTCString().split(" "))
-      // console.log(end.toUTCString().split(" "))
     }
   };
 
   const parseEndDate = (end) => {
     if (endDate !== null) {
-      // console.log(start.toUTCString().split(" "))
       return (end.toUTCString().split(" "))
     }
   };
