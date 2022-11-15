@@ -28,10 +28,12 @@ export default function Booking(props) {
   console.log(parseEndDate(endDate))
 
   const saveDay = () => {
+    let start = parseStartDate(startDate);
+    let end = parseEndDate(endDate);
     const day = {
-      day: 11,
+      day: Number(start[1]),
       month: 11,
-      year: 2022,
+      year: Number(start[3]),
     }
     axios.put('http://localhost:8080/bookedDays/', day)
     // .then(console.log(day))
