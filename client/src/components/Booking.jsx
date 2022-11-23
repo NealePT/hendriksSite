@@ -57,6 +57,7 @@ export default function Booking(props) {
     for (let i = 1; i < Number(end[1]) + 1; i++) {
       day.day = i;
       day.month = end[2];
+      day.year = Number(end[3])
       axios.put('http://localhost:8080/bookedDays/', day)
         .then(console.log(day))
         .then(res => res.data)
@@ -73,6 +74,7 @@ export default function Booking(props) {
     for (let i = 1; i < Number(end[1]) + 1; i++) {
       day.day = i;
       day.month = end[2];
+      day.year = Number(end[3])
       axios.put('http://localhost:8080/bookedDays/', day)
         .then(console.log(day))
         .then(res => res.data)
