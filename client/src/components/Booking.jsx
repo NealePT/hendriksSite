@@ -8,45 +8,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
 export default function Booking(props) {
-  // const [startDate, setStartDate] = useState(new Date());
-  // const [endDate, setEndDate] = useState(null);
-
-  // const onChange = (dates) => {
-  //   const [start, end] = dates;
-  //   setStartDate(start);
-  //   setEndDate(end);
-  // };
-
-  // const parseStartDate = (start) => {
-  //   if (startDate !== null) {
-  //     return (start.toUTCString().split(" "))
-  //   }
-  // };
-
-  // const parseEndDate = (end) => {
-  //   if (endDate !== null) {
-  //     return (end.toUTCString().split(" "))
-  //   }
-  // };
-  // console.log(parseStartDate(startDate))
-  // console.log(parseEndDate(endDate))
-
-  // const saveDay = () => {
-  //   let start = parseStartDate(startDate);
-  //   let end = parseEndDate(endDate);
-  //   const day = {
-  //     day: Number(start[1]),
-  //     month: start[2],
-  //     year: Number(start[3]),
-  //   }
-  //   // for (let i = day.day; i < Number(end[1]); i++) {
-  //   //   console.log(day[i]);
-  //   // }
-  //   axios.put('http://localhost:8080/bookedDays/', day)
-  //   .then(console.log(day))
-  //     .then(res => res.data)
-  //     .catch(err => (console.log(err)))
-  // }
+  
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -86,14 +48,6 @@ export default function Booking(props) {
 
   return (
     <div className="booking">
-      {/* <DatePicker
-        selected={startDate}
-        onChange={onChange}
-        startDate={startDate}
-        endDate={endDate}
-        selectsRange
-        inline
-      /> */}
       <DateRange 
         editableDateInputs={true}
         onChange={item => setState([item.selection])}
