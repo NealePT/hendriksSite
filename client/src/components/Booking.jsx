@@ -8,7 +8,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
 export default function Booking(props) {
-  
+
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -35,15 +35,18 @@ export default function Booking(props) {
   const saveDay = () => {
   let start = parseStartDate(state[0].startDate);
   let end = parseEndDate(state[0].endDate);
-  const day = {
+  let day = {
     day: Number(start[1]),
     month: start[2],
     year: Number(start[3]),
   }
-  axios.put('http://localhost:8080/bookedDays/', day)
-  .then(console.log(day))
-    .then(res => res.data)
-    .catch(err => (console.log(err)))
+  for (let i = Number(start[1]); i < Number(end[1]) + 1; i++) {
+    day.day = i;
+    axios.put('http://localhost:8080/bookedDays/', day)
+    .then(console.log(day))
+      .then(res => res.data)
+      .catch(err => (console.log(err)))
+  }
   }
 
   return (
