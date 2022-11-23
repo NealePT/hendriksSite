@@ -28,9 +28,6 @@ export default function Booking(props) {
       return (end.toUTCString().split(" "))
     }
   };
-  // console.log(parseStartDate(state[0].startDate))
-  // console.log(parseEndDate(state[0].endDate))
-
 
   const saveDay = () => {
   let start = parseStartDate(state[0].startDate);
@@ -40,12 +37,14 @@ export default function Booking(props) {
     month: start[2],
     year: Number(start[3]),
   }
-  for (let i = Number(start[1]); i < Number(end[1]) + 1; i++) {
-    day.day = i;
-    axios.put('http://localhost:8080/bookedDays/', day)
-      .then(console.log(day))
-      .then(res => res.data)
-      .catch(err => (console.log(err)))
+  if (start[2] === end[2]) {
+    for (let i = Number(start[1]); i < Number(end[1]) + 1; i++) {
+      day.day = i;
+      axios.put('http://localhost:8080/bookedDays/', day)
+        .then(console.log(day))
+        .then(res => res.data)
+        .catch(err => (console.log(err)))
+    }
   }
   }
 
