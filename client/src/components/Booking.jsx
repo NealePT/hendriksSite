@@ -62,8 +62,38 @@ export default function Booking(props) {
         .then(res => res.data)
         .catch(err => (console.log(err)))
     }
-  } else {
-    console.log("uh oh ")
+  } else if (day.month === "Apr" || day.month === "Jun" || day.month === "Sep" || day.month === "Nov") {
+    for (let i = Number(start[1]); i < 31; i++) {
+      day.day = i;
+      axios.put('http://localhost:8080/bookedDays/', day)
+        .then(console.log(day))
+        .then(res => res.data)
+        .catch(err => (console.log(err)))
+    }
+    for (let i = 1; i < Number(end[1]) + 1; i++) {
+      day.day = i;
+      day.month = end[2];
+      axios.put('http://localhost:8080/bookedDays/', day)
+        .then(console.log(day))
+        .then(res => res.data)
+        .catch(err => (console.log(err)))
+    }
+  } else if (day.month === "Feb") {
+    for (let i = Number(start[1]); i < 29; i++) {
+      day.day = i;
+      axios.put('http://localhost:8080/bookedDays/', day)
+        .then(console.log(day))
+        .then(res => res.data)
+        .catch(err => (console.log(err)))
+    }
+    for (let i = 1; i < Number(end[1]) + 1; i++) {
+      day.day = i;
+      day.month = end[2];
+      axios.put('http://localhost:8080/bookedDays/', day)
+        .then(console.log(day))
+        .then(res => res.data)
+        .catch(err => (console.log(err)))
+    }
   }
   }
 
