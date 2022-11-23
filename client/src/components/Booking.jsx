@@ -37,6 +37,7 @@ export default function Booking(props) {
     month: start[2],
     year: Number(start[3]),
   }
+
   if (start[2] === end[2]) {
     for (let i = Number(start[1]); i < Number(end[1]) + 1; i++) {
       day.day = i;
@@ -45,6 +46,24 @@ export default function Booking(props) {
         .then(res => res.data)
         .catch(err => (console.log(err)))
     }
+  } else if (day.month === "Jan" || day.month === "Mar" || day.month === "May" || day.month === "Jul" || day.month === "Aug" || day.month === "Oct" || day.month === "Dec") {
+    for (let i = Number(start[1]); i < 32; i++) {
+      day.day = i;
+      axios.put('http://localhost:8080/bookedDays/', day)
+        .then(console.log(day))
+        .then(res => res.data)
+        .catch(err => (console.log(err)))
+    }
+    for (let i = 1; i < Number(end[1]) + 1; i++) {
+      day.day = i;
+      day.month = end[2];
+      axios.put('http://localhost:8080/bookedDays/', day)
+        .then(console.log(day))
+        .then(res => res.data)
+        .catch(err => (console.log(err)))
+    }
+  } else {
+    console.log("uh oh ")
   }
   }
 
