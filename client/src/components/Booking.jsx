@@ -1,7 +1,5 @@
 import {useState} from 'react';
 import './Booking.css';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
