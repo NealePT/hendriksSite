@@ -106,10 +106,10 @@ export default function Booking(props) {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     for (let i = 0; i < daysList.length; i++) {
       console.log(daysList[i])
-      if (months.includes(daysList[i].month)) {
-        console.log(months.indexOf(daysList[i].month))
-      }
-      // disabledDays.push(new Date(daysList[i].year, , daysList[i].day)
+      // if (months.includes(daysList[i].month)) {
+      //   console.log(months.indexOf(daysList[i].month))
+      // }
+      disabledDays.push(new Date(daysList[i].year, months.indexOf(daysList[i].month), daysList[i].day))
     }
   };
 
