@@ -15,19 +15,19 @@ export default function Booking(props) {
     }
   ]);
   
+  
+  const saveDay = () => {
     const parseStartDate = (start) => {
     if (state[0].startDate != null) {
       return (start.toUTCString().split(" "))
     }
   };
-
+  
   const parseEndDate = (end) => {
     if (state[0].endDate != null) {
       return (end.toUTCString().split(" "))
     }
   };
-
-  const saveDay = () => {
   let start = parseStartDate(state[0].startDate);
   let end = parseEndDate(state[0].endDate);
   let day = {
