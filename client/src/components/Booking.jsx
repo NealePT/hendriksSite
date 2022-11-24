@@ -15,7 +15,6 @@ export default function Booking(props) {
     }
   ]);
   
-  
   const saveDay = () => {
     const parseStartDate = (start) => {
     if (state[0].startDate != null) {
@@ -104,6 +103,8 @@ export default function Booking(props) {
         onChange={item => setState([item.selection])}
         moveRangeOnFirstSelection={false}
         ranges={state}
+        minDate={new Date()}
+        // disabledDates={[new Date()]}
       />
       <button onClick={saveDay}>Save Day</button>
     </div>
