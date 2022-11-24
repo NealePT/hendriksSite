@@ -102,18 +102,19 @@ export default function Booking(props) {
   // console.log(new Date())
   // console.log(state[0].startDate)
   // console.log(new Date(2020, 6, 15))
-  // const getBookedDays = (daysList) => {
-  //   let booked = [];
-  //   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-  //   for (const key in daysList) {
-  //     if (daysList.hasOwnProperty(key)) {
-  //       console.log(`${key}: ${daysList[key]}`)
-  //     }
-  //   }
-  //   console.log(daysList)
-  // };
+  const getBookedDays = (daysList) => {
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    for (let i = 0; i < daysList.length; i++) {
+      console.log(daysList[i])
+      if (months.includes(daysList[i].month)) {
+        console.log(months.indexOf(daysList[i].month))
+      }
+      // disabledDays.push(new Date(daysList[i].year, , daysList[i].day)
+    }
+  };
 
-  console.log((props.state.bookedDays))
+  console.log(getBookedDays(props.state.bookedDays))
+  console.log(new Date())
 
   return (
     <div className="booking">
@@ -123,7 +124,7 @@ export default function Booking(props) {
         moveRangeOnFirstSelection={false}
         ranges={state}
         minDate={new Date()}
-        // disabledDates={getBookedDays()}
+        disabledDates={disabledDays}
       />
       <button onClick={saveDay}>Save Day</button>
     </div>
