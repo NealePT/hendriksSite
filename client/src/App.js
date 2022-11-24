@@ -22,7 +22,9 @@ function App() {
       <NavBar />
       <About />
       <Gallery />
-      <Booking />
+      <Booking 
+      state={state}
+      />
     </main>
   );
 }

@@ -14,7 +14,7 @@ export default function Booking(props) {
       key: 'selection'
     }
   ]);
-  
+
   const saveDay = () => {
     const parseStartDate = (start) => {
     if (state[0].startDate != null) {
@@ -94,7 +94,17 @@ export default function Booking(props) {
         .catch(err => (console.log(err)))
     }
   }
+
+  let disabledDays = [];
+  
   }
+  // console.log(props.state.bookedDays[0])
+  // console.log(new Date())
+  console.log(state[0].startDate)
+  console.log(new Date(2020, 6, 15))
+  // const getBookedDays = () => {
+  //   return [state[0].startDate, state[0].endDate]
+  // };
 
   return (
     <div className="booking">
@@ -104,7 +114,7 @@ export default function Booking(props) {
         moveRangeOnFirstSelection={false}
         ranges={state}
         minDate={new Date()}
-        // disabledDates={[new Date()]}
+        // disabledDates={getBookedDays()}
       />
       <button onClick={saveDay}>Save Day</button>
     </div>
