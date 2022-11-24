@@ -95,26 +95,15 @@ export default function Booking(props) {
         .catch(err => (console.log(err)))
     }
   }
-
-  
   }
-  // console.log(props.state.bookedDays[0].day)
-  // console.log(new Date())
-  // console.log(state[0].startDate)
-  // console.log(new Date(2020, 6, 15))
+
   const getBookedDays = (daysList) => {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     for (let i = 0; i < daysList.length; i++) {
       console.log(daysList[i])
-      // if (months.includes(daysList[i].month)) {
-      //   console.log(months.indexOf(daysList[i].month))
-      // }
       disabledDays.push(new Date(daysList[i].year, months.indexOf(daysList[i].month), daysList[i].day))
     }
   };
-
-  console.log(getBookedDays(props.state.bookedDays))
-  console.log(new Date())
 
   return (
     <div className="booking">
