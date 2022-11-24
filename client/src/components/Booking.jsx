@@ -9,7 +9,7 @@ export default function Booking(props) {
   const [state, setState] = useState([
     {
       startDate: new Date(),
-      endDate: null,
+      endDate: {},
       key: 'selection'
     }
   ]);
@@ -96,7 +96,7 @@ export default function Booking(props) {
   }
 
   const getBookedDays = (daysList) => {
-    let disabledDays = [new Date(2022, 10, 26), new Date(2022, 10, 25), new Date(2022, 10, 27)];
+    let disabledDays = [];
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     for (let i = 0; i < daysList.length; i++) {
       disabledDays.push(new Date(daysList[i].year, months.indexOf(daysList[i].month), daysList[i].day))
