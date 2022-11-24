@@ -6,6 +6,7 @@ import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
 export default function Booking(props) {
+  let disabledDays = [new Date(2022, 10, 26), new Date(2022, 10, 25), new Date(2022, 10, 27)];
 
   const [state, setState] = useState([
     {
@@ -95,16 +96,24 @@ export default function Booking(props) {
     }
   }
 
-  let disabledDays = [];
   
   }
-  // console.log(props.state.bookedDays[0])
+  // console.log(props.state.bookedDays[0].day)
   // console.log(new Date())
-  console.log(state[0].startDate)
-  console.log(new Date(2020, 6, 15))
-  // const getBookedDays = () => {
-  //   return [state[0].startDate, state[0].endDate]
+  // console.log(state[0].startDate)
+  // console.log(new Date(2020, 6, 15))
+  // const getBookedDays = (daysList) => {
+  //   let booked = [];
+  //   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  //   for (const key in daysList) {
+  //     if (daysList.hasOwnProperty(key)) {
+  //       console.log(`${key}: ${daysList[key]}`)
+  //     }
+  //   }
+  //   console.log(daysList)
   // };
+
+  console.log((props.state.bookedDays))
 
   return (
     <div className="booking">
