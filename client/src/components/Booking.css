@@ -1,6 +1,9 @@
 .booking {
   display: flex;
   flex-direction: column;
+  max-width: 350px;
+  align-items: center;
+  margin: 10px;
 }
 
 .rdrCalendarWrapper {
@@ -8,6 +11,7 @@
   max-width: 350px;
 }
 
-.booking button {
+.saveBookingButton {
   max-width: 100px;
+  margin: 20px;
 }

@@ -114,7 +114,7 @@ export default function Booking(props) {
         minDate={new Date()}
         disabledDates={getBookedDays(props.state.bookedDays)}
       />
-      <button onClick={saveDay}>Save Day</button>
+      <button className="saveBookingButton" onClick={saveDay}>Save Day</button>
     </div>
   );
 };
