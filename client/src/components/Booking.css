@@ -1,0 +1,13 @@
+.booking {
+  display: flex;
+  flex-direction: column;
+}
+
+.rdrCalendarWrapper {
+  border: 1px solid red;
+  max-width: 350px;
+}
+
+.booking button {
+  max-width: 100px;
+}
