@@ -19,7 +19,7 @@ function App() {
       <About />
       <Gallery />
       <Booking 
-      state={state}
+        state={state}
       />
     </main>
   );
