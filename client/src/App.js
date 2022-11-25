@@ -1,6 +1,5 @@
 import './App.css';
-import axios from 'axios';
-import {React, useState, useEffect} from 'react';
+import {React} from 'react';
 import useAppData from './hooks/useAppData'
 
 // Component imports
@@ -12,9 +11,6 @@ import Booking from './components/Booking';
 function App() {
   const { state } = useAppData();
 
-//   const userList = (state.users).map((user) => {
-//     return (user.email)
-//   })
 // console.log(state.bookedDays)
 
   return (
