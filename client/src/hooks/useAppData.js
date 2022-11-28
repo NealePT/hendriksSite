@@ -9,6 +9,8 @@ export default function useAppData() {
     bookedDays: [],
   });
 
+  appData.state = state;
+
   useEffect(() => {
     Promise.all([
       axios.get('/users'),
@@ -19,7 +21,6 @@ export default function useAppData() {
     })
   }, [])
 
-  appData.state = state;
 
   const getBookedDays = (daysList) => {
     let disabledDays = [];
@@ -30,6 +31,7 @@ export default function useAppData() {
     return disabledDays
   };
   appData.getBookedDays = getBookedDays;
+
 
   const saveDay = (starter, ender) => {
     const parseStartDate = (start) => {
@@ -112,6 +114,7 @@ export default function useAppData() {
     }
   }
   appData.saveDay = saveDay;
+
 
   return appData;
 }
