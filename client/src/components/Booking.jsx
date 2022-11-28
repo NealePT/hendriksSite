@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import './Booking.css';
-import axios from 'axios';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
