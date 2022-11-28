@@ -14,10 +14,6 @@ export default function Booking(props) {
     }
   ]);
 
-  const save = () => {
-    props.saveDay(state[0].startDate, state[0].endDate)
-  }
-
   return (
     <div className="booking">
       <DateRange 
@@ -28,7 +24,7 @@ export default function Booking(props) {
         minDate={new Date()}
         disabledDates={props.getBookedDays(props.state.bookedDays)}
       />
-      <button className="saveBookingButton" onClick={save}>Save Day</button>
+      <button className="saveBookingButton" onClick={() => props.saveDay(state[0].startDate, state[0].endDate)}>Save Day</button>
     </div>
   );
 };
