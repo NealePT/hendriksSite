@@ -9,7 +9,7 @@ import Gallery from './components/Gallery';
 import Booking from './components/Booking';
 
 function App() {
-  const { state } = useAppData();
+  const { state, getBookedDays } = useAppData();
 
 // console.log(state.bookedDays)
 
@@ -20,6 +20,7 @@ function App() {
       <Gallery />
       <Booking 
         state={state}
+        getBookedDays={getBookedDays}
       />
     </main>
   );
