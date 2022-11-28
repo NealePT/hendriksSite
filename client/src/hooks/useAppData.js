@@ -8,7 +8,6 @@ export default function useAppData() {
     users: [],
     bookedDays: [],
   });
-
   appData.state = state;
 
   useEffect(() => {
@@ -21,7 +20,7 @@ export default function useAppData() {
     })
   }, [])
 
-
+  // Disable days on calendar
   const getBookedDays = (daysList) => {
     let disabledDays = [];
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -32,7 +31,7 @@ export default function useAppData() {
   };
   appData.getBookedDays = getBookedDays;
 
-
+  // Function to save day into database
   const saveDay = (starter, ender) => {
     const parseStartDate = (start) => {
     if (starter != null) {
