@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 const stripeChargeCallback = res => (stripeErr, stripeRes) => {
   if (stripeErr) {
     res.status(500).send({ error: stripeErr });

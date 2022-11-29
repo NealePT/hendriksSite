@@ -7,3 +7,9 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+const paymentApi = require("./payment");
+const configureRoutes = app => {
+  paymentApi(app);
+};
+module.exports = configureRoutes;
