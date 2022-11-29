@@ -24,6 +24,7 @@ export default function Booking(props) {
         disabledDates={props.getBookedDays(props.state.bookedDays)}
       />
       <button className="saveBookingButton" onClick={() => props.saveDay(state[0].startDate, state[0].endDate)}>Save Day</button>
+      <button>Checkout</button>
     </div>
   );
 };
