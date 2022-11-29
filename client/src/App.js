@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import About from './components/About';
 import Gallery from './components/Gallery';
 import Booking from './components/Booking';
+import StripeBtn from './components/Payment';
 
 function App() {
   const { state, getBookedDays, saveDay } = useAppData();
@@ -23,6 +24,7 @@ function App() {
         getBookedDays={getBookedDays}
         saveDay={saveDay}
       />
+      <StripeBtn />
     </main>
   );
 }
