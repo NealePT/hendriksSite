@@ -31,7 +31,7 @@ export default function useAppData() {
   };
   appData.getBookedDays = getBookedDays;
 
-  // Function to save day into database
+  // Save day into database
   const saveDay = (starter, ender) => {
     const parseStartDate = (start) => {
     if (starter != null) {
