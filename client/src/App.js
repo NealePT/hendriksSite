@@ -12,8 +12,6 @@ import StripeBtn from './components/Payment';
 function App() {
   const { state, getBookedDays, saveDay } = useAppData();
 
-// console.log(state.bookedDays)
-
   return (
     <main className="App">
       <NavBar />
