@@ -9,7 +9,7 @@ dotenv.config();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const bookedRouter = require('./routes/bookedDays');
-const paymentRouter = require('./routes/payment');
+// const paymentRouter = require('./routes/payment');
 
 const app = express();
 
@@ -23,7 +23,9 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bookedDays', bookedRouter);
-app.use('/payment', paymentRouter);
+// app.use('/payment', paymentRouter);
+
+// Below is from stripe docs
 
 // const bodyParser = require("body-parser");
 // app.use(bodyParser.json());
